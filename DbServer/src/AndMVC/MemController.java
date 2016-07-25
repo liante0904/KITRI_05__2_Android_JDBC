@@ -1,4 +1,4 @@
-package MemMVC;
+package AndMVC;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import jdbc.MemberDAO;
 /**
  * Servlet implementation class MemController
  */
-@WebServlet("/MemController.do")
+@WebServlet("/andController.do")
 //MemController 이거는 웹
 public class MemController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -172,11 +172,11 @@ public class MemController extends HttpServlet {
 				MemberDAO dao = new MemberDAO();	
 				ArrayList<MemberDTO> dtoL = dao.memSelect();
 				System.out.println(dtoL.get(0));
+				
 				request.setAttribute("dtoL", dtoL);
 				RequestDispatcher rd = request.getRequestDispatcher("memSelect.jsp");
 				rd.forward(request, response);
 			}
-			
 		}
 	}
 
