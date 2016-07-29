@@ -1,3 +1,4 @@
+package KBS;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -11,6 +12,7 @@ import org.w3c.dom.Node;
  
 public class XmlParsering {
  
+	//XML은 기본적으로 제공함. 
     public static void main(String[] args) {
  
         try{
