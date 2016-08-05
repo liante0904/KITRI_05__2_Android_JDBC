@@ -9,14 +9,14 @@ import sun.net.www.protocol.http.HttpURLConnection;
 
 public class IO_Object {
 
-	
+
 	public static final String GET_URL = "http://www.maniadb.com/api/search/윤하/?sr=artist&display=10&key=liante0904_gmail&v=0.5";
 
 	public static final String POST_URL = "https://google.com";
-	
-	
+
+
 	public static void readContentFromGet() throws IOException {
-		
+
 		// 끌어모았어 get 요청 URL 문자열 사용 URLEncoder.encode 대한 특별한 및 안 보이는 문자 인코딩 진행하다
 		String getURL = GET_URL + "?name=" + URLEncoder.encode("zhangshan", "utf-8");
 		URL getUrl = new URL(getURL);
@@ -44,7 +44,7 @@ public class IO_Object {
 	}
 
 	public static void readContentFromPost() throws IOException {
-		
+
 		// Post 요청 url 및 get 다른 것은 필요 데리고 매개 변수
 		URL postUrl = new URL(POST_URL);
 		// 열 연결
@@ -59,7 +59,7 @@ public class IO_Object {
 		// Post cannot use caches
 		// 못 Post 요청 캐시 사용하기
 		connection.setUseCaches(false);
-		
+
 		// This method takes effects to every instances of this class.URLConnection.setFollowRedirects 것은 static 함수, 역할 은 모든 URLConnection 대상. 
 		// connection.setFollowRedirects(true);
 
@@ -94,15 +94,15 @@ public class IO_Object {
 		reader.close();
 		connection.disconnect();
 	}
-	
-	
+
+
 	public static void main(String[] args) {
 		try {
-			readContentFromGet();
-		//	readContentFromPost();
+			readContentFromGet(); // get방식의 파싱 메소드를 실행합니다.
+			//	readContentFromPost(); // post방식의 파싱 메소드를 실행합니다.
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	}
+}
 
